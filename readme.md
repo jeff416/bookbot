@@ -1,1 +1,2 @@
-Bookbot project readme.
+Bookbot project - Self guided assignemnt from http://boot.dev
+Reads a text file and providses a report with word count and a dictionary recording the number of times a charcter was used in the document.
