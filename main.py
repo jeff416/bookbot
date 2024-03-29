@@ -2,12 +2,12 @@ def main():
     book_path = "books/frankenstein.txt"
     text = get_book_text(book_path)
     word_count = count_words(text)
-    letter_count = count_letters(text)
 
     print(f"--- Begin report of {book_path} ---")
     print(f"{word_count} words found in the document.")
     print()
-    print(f"{letter_count}")
+    count_letters(text)
+    print("--- End report ---")
    
 def get_book_text(path):
     with open(path) as f:
@@ -28,21 +28,19 @@ def count_letters(text):
             if letter in letter_dict:
                 letter_dict[letter] += 1
             else:
-                letter_dict[letter] = 1
+                letter_dict[letter] = 1.
 
-    #converting key and value into a list NEED TO make sepperate keys for letter and count eg "{'letter': 'a', 'count': 5}"
-    #so I can use the sort_on function in the exmaple.
-    
     letter_list = []
     for i in letter_dict:
         char_dict = {}
-        #print(i)
-        char_dict[i] = "count", letter_dict[i]
-        print(letter_dict[i])
+        char_dict["letter"] = i
+        char_dict["count"] = letter_dict[i]
         letter_list.append(char_dict)
     
-    #sort list and return
-    #letter_list.sort(reverse=True, key=sort_on)
-    return letter_list
-
+    letter_list.sort(reverse=True, key=sort_on)
+    
+    for i in range(len(letter_list)):
+        extract = letter_list[i]
+        print(f"The {extract['letter']} charcter was found {int(extract['count'])} times")
+        pass
 main()
