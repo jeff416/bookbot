@@ -43,6 +43,6 @@ def count_letters(text):
     
     for i in range(len(letter_list)):
         extract = letter_list[i]
-        print(f"The {extract['letter']} charcter was found {int(extract['count'])} times")
+        print(f"{extract['letter']}: {int(extract['count'])}")
         pass
 main()
