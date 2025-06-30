@@ -3,11 +3,13 @@ def main():
     text = get_book_text(book_path)
     word_count = count_words(text)
 
-    print(f"--- Begin report of {book_path} ---")
-    print(f"{word_count} words found in the document.")
-    print()
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {book_path}...")
+    print("----------- Word Count ----------")
+    print(f"Found {word_count} total words")
+    print("--------- Character Count -------")
     count_letters(text)
-    print("--- End report ---")
+    print("============= END ===============")
    
 def get_book_text(path):
     with open(path) as f:
