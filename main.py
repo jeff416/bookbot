@@ -10,7 +10,6 @@ def main():
         sys.exit(1)
     
     book_path = sys.argv[1]
-
     text = get_book_text(book_path)
     word_count = count_words(text)
 
